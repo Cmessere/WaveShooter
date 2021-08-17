@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject damagePopup;
-    public float speed = 1.0f;
-    public float health = 100;
+    public float speed;
+    public float health;
 
     Vector3 playerPosition;
     void Start()
@@ -15,29 +15,48 @@ public class Enemy : MonoBehaviour
         playerPosition = player.transform.position;
     }
 
+    void Update()
+    {
+        MoveTowardsPlayer();
+
+        if (health <= 0)
+        {
+            DestroyIfDead();
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
-
         if (collision.gameObject.tag == "Bullet")
         {
             Destroy(collision.gameObject);
-            health -= collision.gameObject.GetComponent<Bullet>().getDamage();
-            GameObject currentPopup = Instantiate(damagePopup, gameObject.transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
-            currentPopup.GetComponent<DamagePopupScript>().setDamageText(Random.Range(1,6));
-
-            Debug.Log("Ouch");
+            int damage = DealDamage(collision);
+            SpawnDamagePopup(damage);
         }
     }
 
-    void Update()
+    private void SpawnDamagePopup(int damage)
+    {
+        GameObject currentPopup = Instantiate(damagePopup, gameObject.transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
+        currentPopup.GetComponent<DamagePopupScript>().setDamageText(damage);
+    }
+
+    private int DealDamage(Collision2D collision)
+    {
+        (int min, int max) = collision.gameObject.GetComponent<Bullet>().getDamageRange();
+        int damage = Random.Range(min, max + 1);
+        health -= damage;
+        return damage;
+    }
+
+    private void MoveTowardsPlayer()
     {
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, playerPosition, step);
-        if(health <= 0)
-        {
-            Destroy(this.gameObject);
-        }
     }
-
+    private void DestroyIfDead()
+    {
+        Destroy(this.gameObject);
+    }
 
 }
