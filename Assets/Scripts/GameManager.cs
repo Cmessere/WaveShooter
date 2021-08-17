@@ -6,6 +6,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public GameObject pauseCanvas;
+    public GameObject gameOverCanvas;
     public EnemySpawner waveSpawner;
     public int enemyQuantity;
     public int waveCount;
@@ -55,4 +56,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void GameOver()
+    {
+        Time.timeScale = 0f;
+        gameOverCanvas.SetActive(true);
+    }
 }

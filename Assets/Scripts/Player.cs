@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameManager GM;
+
     void Start()
     {
-        
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Player has been eaten");
+            GM.GameOver();
+        }
     }
 }
