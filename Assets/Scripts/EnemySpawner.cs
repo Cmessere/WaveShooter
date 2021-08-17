@@ -7,17 +7,20 @@ public class EnemySpawner : MonoBehaviour
     public GameObject zombie;
     public Camera cam;
     
-    void Update()
+    public float SpawnEnemies(int quantity, int waveCount)
     {
-        for (int i = 0; i < 10; i++)
+        float enemiesAmount = Mathf.Ceil((float)waveCount * 1.15f) + quantity;
+        for (int i = 0; i < enemiesAmount; i++)
         {
             SpawnOutsideCamera();
         }
+        return enemiesAmount;
     }
 
     private void SpawnOutsideCamera()
     {
-        Vector3 v3Pos = Camera.main.ViewportToWorldPoint(new Vector3(Random.RandomRange(-2f, 2f), Random.RandomRange(-2f, 2f), 0));
+        Debug.Log("Spawned wave!");
+        Vector3 v3Pos = Camera.main.ViewportToWorldPoint(new Vector3(Random.RandomRange(-1f, 1f), Random.RandomRange(-2f, 2f), 0));
 
         if (v3Pos.x < 0)
             v3Pos.x += 1f;

@@ -8,11 +8,13 @@ public class Enemy : MonoBehaviour
     public float speed;
     public float health;
 
+    private GameManager GM;
     Vector3 playerPosition;
     void Start()
     {
         GameObject player = GameObject.Find("Player");
         playerPosition = player.transform.position;
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -56,6 +58,7 @@ public class Enemy : MonoBehaviour
     }
     private void DestroyIfDead()
     {
+        GM.UpdatedEnemyCount();
         Destroy(this.gameObject);
     }
 
