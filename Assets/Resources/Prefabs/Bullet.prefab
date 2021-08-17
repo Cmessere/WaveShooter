@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8173545706357201244}
   - component: {fileID: 459963076357059957}
-  - component: {fileID: 6849778374876713191}
   - component: {fileID: 1764310052567659952}
+  - component: {fileID: 6777075733833290922}
+  - component: {fileID: 203938600637189115}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +86,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &6849778374876713191
+--- !u!114 &1764310052567659952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7834722813081137776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db2da43987fa39488043b73ff551be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &6777075733833290922
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7834722813081137776}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
+--- !u!50 &203938600637189115
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -106,17 +135,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1764310052567659952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7834722813081137776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5db2da43987fa39488043b73ff551be0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  widthThreshold: {x: 1920, y: 1080}
-  heightThreshold: {x: 1920, y: 1080}
