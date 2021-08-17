@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4082333174788569280}
   - component: {fileID: 4825268353797704923}
   - component: {fileID: 7233890685965584544}
+  - component: {fileID: 948956546980388812}
   m_Layer: 0
   m_Name: DamagePopup
   m_TagString: Untagged
@@ -185,3 +186,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   durationTimer: 1.5
+--- !u!33 &948956546980388812
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3968304019168734830}
+  m_Mesh: {fileID: 0}
