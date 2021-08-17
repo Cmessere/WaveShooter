@@ -13,9 +13,9 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+            Debug.Log("Player has been eaten");
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Player has been eaten");
             GM.GameOver();
         }
     }

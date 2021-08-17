@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         currentEnemies = waveSpawner.SpawnEnemies(enemyQuantity, waveCount);
         enemiesCountText.text = currentEnemies.ToString();
         waveCountText.text = waveCount.ToString();
