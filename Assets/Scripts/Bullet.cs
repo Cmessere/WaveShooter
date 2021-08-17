@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float damage = 10f;
+    public int maxDamage;
+    public int minDamage;
     void OnBecameInvisible()
     {
         Destroy(gameObject);
     }
 
-    public float getDamage()
+    public (int min, int max) getDamageRange()
     {
-        return damage;
+        return (minDamage, maxDamage);
     }
 }
