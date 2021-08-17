@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -373,6 +373,18 @@ PrefabInstance:
     - target: {fileID: 6775796406193104602, guid: 5a942e222d29c3c4aa963834e059d2ae, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778048961164697859, guid: 5a942e222d29c3c4aa963834e059d2ae, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778048961164697859, guid: 5a942e222d29c3c4aa963834e059d2ae, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7916905
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778048961164697859, guid: 5a942e222d29c3c4aa963834e059d2ae, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3443396
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a942e222d29c3c4aa963834e059d2ae, type: 3}
