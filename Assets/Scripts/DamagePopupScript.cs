@@ -14,6 +14,11 @@ public class DamagePopupScript : MonoBehaviour
 
     void Update()
     {
+        AnimateAndDestroy();
+    }
+
+    private void AnimateAndDestroy()
+    {
         durationTimer -= Time.deltaTime;
         float step = 1.5f * Time.deltaTime;
 
