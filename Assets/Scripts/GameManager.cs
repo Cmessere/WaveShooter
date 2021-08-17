@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI waveCountText;
     public TextMeshProUGUI enemiesCountText;
+    public TextMeshProUGUI gameOverCompletedWavesText;
 
     private float currentEnemies;
 
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0f;
+        gameOverCompletedWavesText.text = (waveCount - 1).ToString();
         gameOverCanvas.SetActive(true);
     }
 }
