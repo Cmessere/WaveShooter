@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePopup: {fileID: 3968304019168734830, guid: dbf70d1d1fb55b043b1d5c4d932a2618, type: 3}
-  speed: 1
+  speed: 2
   health: 25
 --- !u!50 &2102405190095554934
 Rigidbody2D:
