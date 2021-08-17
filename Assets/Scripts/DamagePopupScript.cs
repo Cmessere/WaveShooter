@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DamagePopupScript : MonoBehaviour
 {
-    public float durationTimer; 
+    public float durationTimer;
+
+    public void setDamageText(float damage)
+    {
+        this.gameObject.GetComponent<TextMeshPro>().text = "-" + damage;
+    }
 
     void Update()
     {

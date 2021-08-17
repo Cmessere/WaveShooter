@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
             Destroy(collision.gameObject);
             health -= collision.gameObject.GetComponent<Bullet>().getDamage();
             GameObject currentPopup = Instantiate(damagePopup, gameObject.transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
+            currentPopup.GetComponent<DamagePopupScript>().setDamageText(Random.Range(1,6));
 
             Debug.Log("Ouch");
         }
